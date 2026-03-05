@@ -9,7 +9,7 @@ body{
 font-family: Arial;
 text-align:center;
 background:#f2f2f2;
-margin-top:50px;
+margin-top:40px;
 }
 
 h1{
@@ -45,6 +45,11 @@ font-size:22px;
 margin-top:20px;
 }
 
+.history{
+margin-top:20px;
+font-size:18px;
+}
+
 </style>
 
 </head>
@@ -77,6 +82,14 @@ margin-top:20px;
 <button onclick="checkGuess()">Submit Guess</button>
 
 <h3 id="hint"></h3>
+
+<div class="history">
+<h4>Player 1 Guesses:</h4>
+<p id="p1history"></p>
+
+<h4>Player 2 Guesses:</h4>
+<p id="p2history"></p>
+</div>
 
 <br>
 <button onclick="restartGame()">Restart Game</button>
