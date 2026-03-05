@@ -2,6 +2,9 @@ let p1number
 let p2number
 let turn = 1
 
+let p1Guesses = []
+let p2Guesses = []
+
 function startGame(){
 
 p1number = document.getElementById("p1number").value
@@ -24,7 +27,14 @@ function checkGuess(){
 
 let guess = document.getElementById("guess").value
 
+if(guess==""){
+return
+}
+
 if(turn === 1){
+
+p1Guesses.push(guess)
+document.getElementById("p1history").innerText = p1Guesses.join(", ")
 
 if(guess == p2number){
 document.getElementById("hint").innerText="🎉 Player 1 Wins!"
@@ -43,6 +53,9 @@ document.getElementById("turn").innerText="Player 2 Turn"
 }
 
 else{
+
+p2Guesses.push(guess)
+document.getElementById("p2history").innerText = p2Guesses.join(", ")
 
 if(guess == p1number){
 document.getElementById("hint").innerText="🎉 Player 2 Wins!"
@@ -65,7 +78,5 @@ document.getElementById("guess").value=""
 }
 
 function restartGame(){
-
 location.reload()
-
 }
