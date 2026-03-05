@@ -8,7 +8,12 @@
 body{
 font-family: Arial;
 text-align:center;
+background:#f2f2f2;
 margin-top:50px;
+}
+
+h1{
+font-size:40px;
 }
 
 input{
@@ -21,10 +26,23 @@ button{
 padding:10px 20px;
 font-size:16px;
 cursor:pointer;
+border:none;
+background:#4CAF50;
+color:white;
+border-radius:5px;
+}
+
+button:hover{
+background:#45a049;
 }
 
 #game{
 display:none;
+}
+
+#hint{
+font-size:22px;
+margin-top:20px;
 }
 
 </style>
@@ -38,26 +56,30 @@ display:none;
 <div id="setup">
 
 <h3>Player 1 - Enter Secret Number</h3>
-<input type="number" id="p1number" min="1" max="100">
+<input type="password" id="p1number" placeholder="1 - 100">
 
 <h3>Player 2 - Enter Secret Number</h3>
-<input type="number" id="p2number" min="1" max="100">
+<input type="password" id="p2number" placeholder="1 - 100">
 
 <br>
 <button onclick="startGame()">Start Game</button>
 
 </div>
 
+
 <div id="game">
 
 <h2 id="turn">Player 1 Turn</h2>
 
-<input type="number" id="guess" placeholder="Enter guess">
+<input type="number" id="guess" placeholder="Enter your guess">
 
 <br>
 <button onclick="checkGuess()">Submit Guess</button>
 
 <h3 id="hint"></h3>
+
+<br>
+<button onclick="restartGame()">Restart Game</button>
 
 </div>
 
